@@ -3,6 +3,12 @@
 ## - 中文总览
 此项目是为了帮助 C++ 初学者更好对接 app.llua.cn 微验 的库文件。
 
+---
+
+![C++](https://img.shields.io/badge/language-C++-blue)
+![C++](https://img.shields.io/badge/C++-C++11%2B-brightgreen)
+![License](https://img.shields.io/github/license/CZF-H/Weiyan-API_CPP)
+
 **感谢以下（开源）项目（不分先后顺序）：**
 + https://github.com/nlohmann/json
 + https://github.com/curl/curl
