@@ -1,7 +1,7 @@
 # 介绍 / Introduction
 
 ## - 中文总览
-此项目是为了帮助 C++ 初学者更好对接 app.llua.cn 微验 的库文件。
+此项目是为了帮助 C++ 初学者更好对接 app.llua.cn 微验api(v1) 的库文件。
 
 ---
 
@@ -14,7 +14,7 @@
 + https://github.com/curl/curl
 + https://github.com/openssl/openssl
 
-### 项目遵循GPL-3.0协议，详见 LICENSE
+### 项目遵循GPL-3.0协议，保证代码的公开透明，详见 LICENSE
 
 **特点：**
 
@@ -34,18 +34,18 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    Weiyan::Context Ctx = Weiyan::Create("QWERTYUIOP", "10000", "ASDFGHJKL");
+    Weiyan::Context Ctx = Weiyan::Create("appkey", "appid", "rc4key");
     Weiyan::Login LoginObj(Ctx);
     Weiyan::Unbind UnbindObj(Ctx);
     Weiyan::Notice Notice(Ctx);
     
-    LoginObj("ZXCVBNM1234567890");
+    LoginObj("Key"); // 单码登录
     std::cout << LoginObj.data.dump(2) << std::endl;
 
-    UnbindObj("ZXCVBNM1234567890");
+    UnbindObj("Key"); // 解绑卡密
     std::cout << UnbindObj.data.dump(2) << std::endl;
 
-    Notice.Get();
+    Notice.Get(); // 获取公告
     std::cout << Notice.data.dump(2) << std::endl;
 
     return 0;
